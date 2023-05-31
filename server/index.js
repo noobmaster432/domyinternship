@@ -19,7 +19,7 @@ import BlogRoutes from "./routes/blogRoutes.js";
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173", "https://internshipgate.vercel.app"],
   })
 );
 
