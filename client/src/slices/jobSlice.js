@@ -7,7 +7,7 @@ import axios from "axios";
 export const fetchJobData = createAsyncThunk(
   "job/fetchData",
   async () => {
-    const response = await axios.get("http://localhost:5000/api/job");
+    const response = await axios.get("https://internshipgate-api.up.railway.app/api/job");
     return response.data;
   }
 );
