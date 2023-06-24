@@ -1,15 +1,16 @@
 import LatestCard from "./LatestCard";
-import  { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchJobData } from "../../slices/jobSlice";
+import { job } from "../data";
+// import  { useEffect } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import { fetchJobData } from "../../slices/jobSlice";
 
 const LatestInternship = () => {
-  const { data } = useSelector((state) => state.job);
-  const dispatch = useDispatch();
+  // const { data } = useSelector((state) => state.job);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchJobData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchJobData());
+  // }, [dispatch]);
   return (
     <div className="px-4 sm:px-16 py-12 lg:mx-12 xl:mx-48">
       <p className="capitalize text-center text-[#2c4fa5] font-semibold text-sm sm:text-base">
@@ -19,7 +20,7 @@ const LatestInternship = () => {
         Explore remote friendly, flexible internship opportunities.
       </h1>
       <div className="space-y-6">
-        {data?.jobs?.map((data) => (
+        {job?.jobs?.map((data) => (
           <LatestCard key={data._id} data={data} />
         ))}
       </div>

@@ -1,15 +1,16 @@
 import BlogCard from "./BlogCard";
-import  { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchBlogData } from "../../slices/blogSlice";
+import { blog } from "../data";
+// import  { useEffect } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import { fetchBlogData } from "../../slices/blogSlice";
 
 const LatestBlogs = () => {
-  const { data } = useSelector((state) => state.blog);
-  const dispatch = useDispatch();
+  // const { data } = useSelector((state) => state.blog);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchBlogData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchBlogData());
+  // }, [dispatch]);
   return (
     <div className="px-4 bg-white sm:px-16 py-12 lg:px-12 xl:px-44">
       <p className="capitalize text-center text-[#2c4fa5] font-semibold text-sm sm:text-base">
@@ -19,7 +20,7 @@ const LatestBlogs = () => {
         Read our interesting blogs
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {data?.blog?.map((data) => (
+        {blog?.blog?.map((data) => (
           <BlogCard key={data._id} data={data} />
         ))}
       </div>

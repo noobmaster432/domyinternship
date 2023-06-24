@@ -4,17 +4,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import StudentSlide from "./StudentSlide";
-import  { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchStoryData } from "../../slices/storySlice";
+import { story } from "../data";
+// import  { useEffect } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import { fetchStoryData } from "../../slices/storySlice";
 
 const StudentStories = () => {
-  const { data } = useSelector((state) => state.story);
-  const dispatch = useDispatch();
+  // const { data } = useSelector((state) => state.story);
+  // const dispatch = useDispatch();
   
-  useEffect(() => {
-    dispatch(fetchStoryData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchStoryData());
+  // }, [dispatch]);
   return (
     <div className="px-4 bg-white sm:px-2 py-12 lg:px-12 xl:px-48">
       <p className="capitalize text-center text-[#2c4fa5] font-semibold text-sm sm:text-base">
@@ -32,6 +33,8 @@ const StudentStories = () => {
         slidesPerView={1}
         centeredSlides={true}
         loop={true}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -40,7 +43,7 @@ const StudentStories = () => {
         keyboard={true}
         modules={[Autoplay, Navigation, Keyboard]}
       >
-        {data?.story?.map((comment) => (
+        {story?.story?.map((comment) => (
           <SwiperSlide key={comment._id}>
             <StudentSlide comment={comment} />
           </SwiperSlide>

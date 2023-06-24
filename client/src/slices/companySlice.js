@@ -7,7 +7,7 @@ import axios from "axios";
 export const fetchCompanyData = createAsyncThunk(
   "company/fetchData",
   async () => {
-    const response = await axios.get("https://internshipgate-api.up.railway.app/api/company");
+    const response = await axios.get("http://localhost:5000/api/company");
     return response.data;
   }
 );
